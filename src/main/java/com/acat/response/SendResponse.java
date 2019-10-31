@@ -1,6 +1,6 @@
 package com.acat.response;
 
-import com.acat.enums.ResultCode;
+import com.acat.enums.ResponseCode;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -11,7 +11,7 @@ import java.io.Serializable;
  * User: wujinfan
  * Date: 2019-10-31
  */
-public class SendResult<T> implements Serializable {
+public class SendResponse<T> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -55,56 +55,56 @@ public class SendResult<T> implements Serializable {
         this.result = result;
     }
 
-    public SendResult(){
+    public SendResponse(){
         super();
     }
 
-    public SendResult(int code, String msg){
+    public SendResponse(int code, String msg){
         this.code = code;
         this.msg = msg;
     }
 
-    public SendResult(int code, String msg, T result){
+    public SendResponse(int code, String msg, T result){
         super();
         this.code = code;
         this.msg = msg;
         this.result = result;
     }
 
-    public SendResult(T result){
-        this(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg());
+    public SendResponse(T result){
+        this(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getMsg());
     }
 
-    public static <T> SendResult<T> ok(){
+    public static <T> SendResponse<T> ok(){
         RestResultBuilder builder = new RestResultBuilder();
         return builder.ok();
     }
 
-    public static <T> SendResult<T> ok(T body) {
+    public static <T> SendResponse<T> ok(T body) {
         RestResultBuilder builder = new RestResultBuilder();
         return builder.ok(body);
     }
-    public static <T> SendResult<T> failure(int code , String msg) {
+    public static <T> SendResponse<T> failure(int code , String msg) {
         RestResultBuilder builder = new RestResultBuilder();
         return builder.failure(code,msg,null);
     }
 
-    public static <T> SendResult<T> failure(int code , String msg, T body) {
+    public static <T> SendResponse<T> failure(int code , String msg, T body) {
         RestResultBuilder builder = new RestResultBuilder();
         return builder.failure(code,msg,body);
     }
 
     public static class RestResultBuilder{
-        public <T> SendResult<T> ok() {
+        public <T> SendResponse<T> ok() {
             return ok(null);
         }
 
-        public <T> SendResult<T> ok(T body) {
-            return new SendResult<T>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(),body);
+        public <T> SendResponse<T> ok(T body) {
+            return new SendResponse<T>(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getMsg(),body);
         }
 
-        public <T> SendResult<T> failure(int code , String msg, T body) {
-            return new SendResult<T>(code,msg,body);
+        public <T> SendResponse<T> failure(int code , String msg, T body) {
+            return new SendResponse<T>(code,msg,body);
         }
     }
 

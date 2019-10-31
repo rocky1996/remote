@@ -5,7 +5,7 @@ package com.acat.enums;
  * User: wujinfan
  * Date: 2019-10-31
  */
-public enum ResultCode {
+public enum ResponseCode {
 
     SUCCESS(0,"操作成功"),
     ERROR_1(1,"参数为空"),;
@@ -29,7 +29,7 @@ public enum ResultCode {
         this.msg = msg;
     }
 
-    ResultCode(int code, String msg) {
+    ResponseCode(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
