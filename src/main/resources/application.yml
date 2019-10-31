@@ -1,0 +1,4 @@
+spring:
+  # 配置启动的配置文件
+  profiles:
+    active: local
