@@ -5,7 +5,7 @@ package com.acat.enums;
  * User: wujinfan
  * Date: 2019-10-31
  */
-public enum  GlobalCode {
+public enum ResultCode {
 
     SUCCESS(0,"操作成功"),
     ERROR_1(1,"参数为空"),;
@@ -29,7 +29,7 @@ public enum  GlobalCode {
         this.msg = msg;
     }
 
-    GlobalCode(int code, String msg) {
+    ResultCode(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }

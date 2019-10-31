@@ -1,6 +1,6 @@
 package com.acat.service;
 
-import com.acat.response.RestResult;
+import com.acat.response.SendResult;
 
 /**
  * Created by IntelliJ IDEA.
@@ -9,6 +9,6 @@ import com.acat.response.RestResult;
  */
 public interface UserService {
 
-    RestResult getUserEntityByClass(String remote_user_class);
+    SendResult getUserEntityByClass(String remote_user_class);
 
 }

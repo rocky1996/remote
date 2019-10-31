@@ -2,7 +2,7 @@ package com.acat.service.impl;
 
 import com.acat.dao.UserDao;
 import com.acat.entity.UserEntity;
-import com.acat.response.RestResult;
+import com.acat.response.SendResult;
 import com.acat.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,12 +23,12 @@ public class UserServiceImpl implements UserService{
     private UserDao userDao;
 
     @Override
-    public RestResult getUserEntityByClass(String remote_user_class) {
+    public SendResult getUserEntityByClass(String remote_user_class) {
 
         List<UserEntity> list = userDao.getUserEntityByClass(remote_user_class);
 
         Map<String,Object> map = new HashMap<>();
         map.put("list",list);
-        return RestResult.ok(map);
+        return SendResult.ok(map);
     }
 }
