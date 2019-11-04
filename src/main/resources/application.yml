@@ -2,3 +2,12 @@ spring:
   # 配置启动的配置文件
   profiles:
     active: local
+
+#服务器相关配置
+server:
+  port: 8899
+  undertow:
+    accesslog:
+      pattern: combined
+      enabled: true
+      dir: /data/logs
