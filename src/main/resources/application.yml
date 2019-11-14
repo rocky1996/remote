@@ -11,3 +11,6 @@ server:
       pattern: combined
       enabled: true
       dir: /data/logs
+
+  servlet:
+    context-path: /acat-rest
