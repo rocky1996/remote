@@ -2,8 +2,6 @@ package com.acat.mongo;
 
 import com.acat.mongo.entity.CarEntity;
 
-import java.util.List;
-
 /**
  * Created by IntelliJ IDEA.
  * User: wujinfan
