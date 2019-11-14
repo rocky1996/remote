@@ -1,9 +1,9 @@
-package com.acat.service.impl;
+package com.acat.service.user.impl;
 
 import com.acat.dao.UserDao;
 import com.acat.entity.UserEntity;
 import com.acat.response.SendResponse;
-import com.acat.service.UserService;
+import com.acat.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -2,6 +2,10 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/remote-test
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/remote
