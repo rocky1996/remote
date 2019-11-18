@@ -2,9 +2,22 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+  #mongo 配置文件
   data:
     mongodb:
       uri: mongodb://localhost:27017/remote-test
+
+  #redis 配置文件
+  redis:
+    host: localhost
+    password:
+    database: 1 #注意此处的设置,select 0,select 1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 10
+        min-idle: 1
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
